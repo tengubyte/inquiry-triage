@@ -1,0 +1,43 @@
+{
+  "name": "inquiry-triage",
+  "version": "0.1.0",
+  "description": "Sort website contact-form messages with Claude: lead, support, spam or other, with the stated details pulled out and a reply drafted for a person to check.",
+  "license": "MIT",
+  "author": "TenguByte (https://tengubyte.io)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tengubyte/inquiry-triage.git"
+  },
+  "homepage": "https://github.com/tengubyte/inquiry-triage#readme",
+  "keywords": [
+    "claude",
+    "anthropic",
+    "contact-form",
+    "cloudflare-workers",
+    "spam-filter",
+    "lead-qualification"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "typecheck": "tsc",
+    "test": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test \"test/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.9.3"
+  }
+}
